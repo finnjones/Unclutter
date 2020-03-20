@@ -1,24 +1,32 @@
 import os
 import shutil
-computerName = ""
-f= open("das.txt","w")
-f.write('bra')
-f.close()
+
+f=open("data.txt", "r")
+contents = f.read()
+print(contents)
+contents = contents.split()
+
 computerName = 'finn.jones'
-# app = contents[1]
-app = 'y'
+
+computerName = contents[0]
+app = contents[1]
+
+
 if app == "n":
-    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop", "School Work"))]
-    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work", "Maths"))]
-    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work", "English"))]
-    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work", "Science"))]
-    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work", "Geography"))]
-    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work", "History"))]
-    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work", "Christian Studies"))]
-    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work", "PDHPE"))]
-    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work", "Images"))]
-    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop", "My Stuff"))]
-    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/My Stuff", "DMG"))]
+    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop", "School Work1"))]
+    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work1", "Maths"))]
+    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work1", "English"))]
+    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work1", "Science"))]
+    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work1", "Geography"))]
+    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work1", "History"))]
+    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work1", "Christian Studies"))]
+    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work1", "PDHPE"))]
+    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/School Work1", "Images"))]
+    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop", "My Stuff1"))]
+    [os.mkdir(os.path.join("/Users/"+ computerName +"/desktop/My Stuff1", "DMG"))]
+
+    f = open('data.txt','w')
+    f.write(contents[0] + ' y')
 
 
 os.chdir("/Users/"+ computerName +"/Downloads")
