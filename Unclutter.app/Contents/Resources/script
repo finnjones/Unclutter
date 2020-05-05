@@ -38,6 +38,8 @@ def fileSystem():
     [os.mkdir(os.path.join(computerName +"/desktop", "My Stuff"))]
     [os.mkdir(os.path.join(computerName +"/desktop/My Stuff", "DMG"))]
     [os.mkdir(os.path.join(computerName +"/desktop/My Stuff", "ZIP"))]
+    [os.mkdir(os.path.join(computerName +"/desktop/My Stuff", "Audio"))]
+    
 
 def createFolder(directory):
     try:
@@ -80,7 +82,7 @@ window.minsize(400, 400)
 # Give your window a title
 window.title("Unclutter")
 # Set Icon
-window.wm_iconbitmap("pacman.ico")
+# window.wm_iconbitmap("DeclutterIcon.png")
  
 # Place 'Hello World' label on the window
 label = tkinter.Label(window, text="Press Button To Unclutter")
@@ -131,7 +133,7 @@ def press():
     Clean("DT", computerName +"/Desktop/School Work/DT/")
     Clean("python", computerName +"/Desktop/School Work/Information Software Technology/")
     Clean("pip", computerName +"/Desktop/School Work/Information Software Technology/")
-
+    CleanEND(['.mp3'], computerName +"/Desktop/MY STUFF/Audio/")
     CleanEND(['.dmg'], computerName +"/Desktop/MY STUFF/DMG/")
     CleanEND(['.zip'], computerName +"/Desktop/MY STUFF/ZIP/")
     # CleanEND(['.ai'], computerName +"/Desktop/School Work Work/DT/")
