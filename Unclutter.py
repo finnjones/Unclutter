@@ -141,7 +141,7 @@ def press():
     CleanEND(['.gcode', '.stl'], computerName +"/Desktop/3D Printer/")
     CleanEND(['.py'], computerName +"/Desktop/School Work/IST/")
 
-    CleanEND(['.app'], computerName +"/Applications/")
+    CleanEND(['.app'], "/Applications/")
  
 # Place 'Change Label' button on the window
 button = tkinter.Button(window, text="Button", command=press)

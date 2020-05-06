@@ -82,7 +82,7 @@ window.minsize(400, 400)
 # Give your window a title
 window.title("Unclutter")
 # Set Icon
-# window.wm_iconbitmap("DeclutterIcon.png")
+window.wm_iconbitmap("AppIcon.icns")
  
 # Place 'Hello World' label on the window
 label = tkinter.Label(window, text="Press Button To Unclutter")
@@ -141,7 +141,7 @@ def press():
     CleanEND(['.gcode', '.stl'], computerName +"/Desktop/3D Printer/")
     CleanEND(['.py'], computerName +"/Desktop/School Work/IST/")
 
-    CleanEND(['.app'], computerName +"/Applications/")
+    CleanEND(['.app'], "/Applications/")
  
 # Place 'Change Label' button on the window
 button = tkinter.Button(window, text="Button", command=press)
