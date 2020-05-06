@@ -35,6 +35,7 @@ def fileSystem():
     [os.mkdir(os.path.join(computerName +"/desktop/School Work", "Christian Studies"))]
     [os.mkdir(os.path.join(computerName +"/desktop/School Work", "PDHPE"))]
     [os.mkdir(os.path.join(computerName +"/desktop/School Work", "Images"))]
+    [os.mkdir(os.path.join(computerName +"/desktop/School Work", "Notifications"))]
     [os.mkdir(os.path.join(computerName +"/desktop", "My Stuff"))]
     [os.mkdir(os.path.join(computerName +"/desktop/My Stuff", "DMG"))]
     [os.mkdir(os.path.join(computerName +"/desktop/My Stuff", "ZIP"))]
