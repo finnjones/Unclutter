@@ -128,12 +128,13 @@ def press():
     Clean("History", computerName +"/Desktop/School Work/History/")
 
     Clean("REDEMPTION", computerName +"/Desktop/School Work/English/")
-    # print(appDic)
+
 
 
     Clean("DT", computerName +"/Desktop/School Work/DT/")
     Clean("python", computerName +"/Desktop/School Work/Information Software Technology/")
     Clean("pip", computerName +"/Desktop/School Work/Information Software Technology/")
+    
     CleanEND(['.mp3'], computerName +"/Desktop/MY STUFF/Audio/")
     CleanEND(['.dmg'], computerName +"/Desktop/MY STUFF/DMG/")
     CleanEND(['.zip'], computerName +"/Desktop/MY STUFF/ZIP/")
