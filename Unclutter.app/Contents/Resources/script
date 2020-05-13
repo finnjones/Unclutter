@@ -1,19 +1,13 @@
 import tkinter
 import os
 import shutil
-
+from tkinter import *
 FlexyPath2 = os.path.dirname(os.path.abspath(__file__))
 
 FlexyPath = os.path.expanduser('~')
 computerName = FlexyPath
 
 print(computerName)
-
-
-
-
-
-
 os.chdir(computerName +"/Downloads")
 
 dic = []
@@ -25,30 +19,100 @@ appDic = []
 for line1 in os.listdir(): 
     appDic.append(line1)
 
-def fileSystem():
-    [os.mkdir(os.path.join(computerName +"/desktop", "School Work"))]
-    [os.mkdir(os.path.join(computerName +"/desktop/School Work", "Maths"))]
-    [os.mkdir(os.path.join(computerName +"/desktop/School Work", "English"))]
-    [os.mkdir(os.path.join(computerName +"/desktop/School Work", "Science"))]
-    [os.mkdir(os.path.join(computerName +"/desktop/School Work", "Geography"))]
-    [os.mkdir(os.path.join(computerName +"/desktop/School Work", "History"))]
-    [os.mkdir(os.path.join(computerName +"/desktop/School Work", "Christian Studies"))]
-    [os.mkdir(os.path.join(computerName +"/desktop/School Work", "PDHPE"))]
-    [os.mkdir(os.path.join(computerName +"/desktop/School Work", "Images"))]
-    [os.mkdir(os.path.join(computerName +"/desktop/School Work", "Notifications"))]
-    [os.mkdir(os.path.join(computerName +"/desktop", "My Stuff"))]
-    [os.mkdir(os.path.join(computerName +"/desktop/My Stuff", "DMG"))]
-    [os.mkdir(os.path.join(computerName +"/desktop/My Stuff", "ZIP"))]
-    [os.mkdir(os.path.join(computerName +"/desktop/My Stuff", "Audio"))]
-    
+print(appDic)
+print(dic)
 
-def createFolder(directory):
+def createFolder(directory, name):
     try:
         if not os.path.exists(directory):
-            os.makedirs(directory)
-    except OSError:
-        print ('Error: Creating directory. ' +  directory)
+            [os.mkdir(os.path.join(computerName + directory, name))]
+    except:
+        print ('Error: Creating directory. ' +  name)
+
+def fileSystem():
+    createFolder("/desktop", "School Work")
+    createFolder("/desktop/School Work", "Maths")
+    createFolder("/desktop/School Work", "English")
+    createFolder("/desktop/School Work", "Science")
+    createFolder("/desktop/School Work", "Geography")
+    createFolder("/desktop/School Work", "History")
+    createFolder("/desktop/School Work", "Christian Studies")
+    createFolder("/desktop/School Work", "PDHPE")
+    createFolder("/desktop/School Work", "Images")
+    createFolder("/desktop/School Work", "Notifications")
+    createFolder("/desktop", "My Stuff")
+    createFolder("/desktop/My Stuff", "DMG")
+    createFolder("/desktop/My Stuff", "ZIP")
+    createFolder("/desktop/My Stuff", "Audio")
+
+    
+
+
+    
+
+# def CleanENDApp(extensions, place):
+
+#     dicl = len(dic)
+#     var = 0
+#     while dicl != var:
+#         if extensions in dic[var]:
+#             print(dic[var])
+#             shutil.move(computerName +'/downloads/' + dic[(var)], place + dic[var])
+#         var = var + 1
+
+    
+#     exts = tuple(extensions)
+
+#     dmga = [f for f in dic if f.endswith(exts)]
+
+#     dmgal = len(dmga)
+#     var = 0
+#     while dmgal != var:
         
+#         shutil.move(computerName +'/downloads/' + dmga[(var)], place + dmga[var])
+#         var = var + 1
+        
+#     print(dmga)
+
+
+# def Cl():
+#     sdic = []
+#     dicl = len(appDic)
+#     var = 0
+#     while dicl != var:
+#         appDic[var] = ''.join(appDic[var].split())[:-4]
+#         print(appDic[var])
+#         sdic.append(appDic[var])
+#         var = var + 1
+
+#     varl = 0
+#     for f in dic:
+#         # print(f)
+#         varl = varl + 1
+#         # print(f)
+        
+#         # print(sdic[varl])
+#         # print("------------------------------------------------------------------------")
+
+#         for sdic in f:
+#             print("good")
+#             print(sdic)
+#         # if sdic[varl] in f:
+#         #     print('asd')
+#         #     print(sdic[varl])
+
+#         # exts = tuple(".dmg")
+
+#         # dmga = [f for f in dic if f.endswith(exts)]
+
+#         # dmgal = len(dmga)
+#         # var1 = 0
+#         # while dmgal != var1:
+#         #     print("hello")
+#         #     var1 = var1 + 1
+        
+#     # print(dmga)
+
 
 
 def CleanEND(extensions, place):
@@ -83,7 +147,8 @@ window.minsize(400, 400)
 # Give your window a title
 window.title("Unclutter")
 # Set Icon
-window.wm_iconbitmap("AppIcon.icns")
+# window.wm_iconbitmap("AppIcon.icns")
+
  
 # Place 'Hello World' label on the window
 label = tkinter.Label(window, text="Press Button To Unclutter")
@@ -128,27 +193,31 @@ def press():
     Clean("History", computerName +"/Desktop/School Work/History/")
 
     Clean("REDEMPTION", computerName +"/Desktop/School Work/English/")
-    # print(appDic)
+
 
 
     Clean("DT", computerName +"/Desktop/School Work/DT/")
     Clean("python", computerName +"/Desktop/School Work/Information Software Technology/")
     Clean("pip", computerName +"/Desktop/School Work/Information Software Technology/")
+    
     CleanEND(['.mp3'], computerName +"/Desktop/MY STUFF/Audio/")
     CleanEND(['.dmg'], computerName +"/Desktop/MY STUFF/DMG/")
     CleanEND(['.zip'], computerName +"/Desktop/MY STUFF/ZIP/")
-    # CleanEND(['.ai'], computerName +"/Desktop/School Work Work/DT/")
+    CleanEND(['.ai'], computerName +"/Desktop/School Work Work/DT/")
     CleanEND(['.png', '.jpg', '.jpeg', '.JPG'], computerName +"/Desktop/School Work/Images/")
     CleanEND(['.gcode', '.stl'], computerName +"/Desktop/3D Printer/")
     CleanEND(['.py'], computerName +"/Desktop/School Work/IST/")
 
     CleanEND(['.app'], "/Applications/")
- 
+
+
+
 # Place 'Change Label' button on the window
 button = tkinter.Button(window, text="Button", command=press)
 button2 = tkinter.Button(window, text="Button", command=fileSystem)
 # Place label at coordinates x=10 and y=10 (top right hand corner)
 button.place(x=10, y=40)
 button2.place(x=10, y=100)
+# w.place(x=10, y=150)
 # Show new window
 window.mainloop()
