@@ -189,6 +189,7 @@ def press():
     Clean("Outcomes", computerName +"/Desktop/School Work/Science/")
     Clean("Year 10", computerName +"/Desktop/School Work/Notifications/")
     Clean("English", computerName +"/Desktop/School Work/English/")
+    Clean("Macbeth", computerName +"/Desktop/School Work/English/")
     Clean("Geography", computerName +"/Desktop/School Work/Geography/")
     Clean("History", computerName +"/Desktop/School Work/History/")
 
