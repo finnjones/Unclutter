@@ -19,7 +19,7 @@ appDic = []
 for line1 in os.listdir(): 
     appDic.append(line1)
 
-print(appDic)
+# print(appDic)
 print(dic)
 
 def createFolder(directory, name):
@@ -48,74 +48,11 @@ def fileSystem():
     
 
 
-    
-
-# def CleanENDApp(extensions, place):
-
-#     dicl = len(dic)
-#     var = 0
-#     while dicl != var:
-#         if extensions in dic[var]:
-#             print(dic[var])
-#             shutil.move(computerName +'/downloads/' + dic[(var)], place + dic[var])
-#         var = var + 1
-
-    
-#     exts = tuple(extensions)
-
-#     dmga = [f for f in dic if f.endswith(exts)]
-
-#     dmgal = len(dmga)
-#     var = 0
-#     while dmgal != var:
-        
-#         shutil.move(computerName +'/downloads/' + dmga[(var)], place + dmga[var])
-#         var = var + 1
-        
-#     print(dmga)
-
-
-# def Cl():
-#     sdic = []
-#     dicl = len(appDic)
-#     var = 0
-#     while dicl != var:
-#         appDic[var] = ''.join(appDic[var].split())[:-4]
-#         print(appDic[var])
-#         sdic.append(appDic[var])
-#         var = var + 1
-
-#     varl = 0
-#     for f in dic:
-#         # print(f)
-#         varl = varl + 1
-#         # print(f)
-        
-#         # print(sdic[varl])
-#         # print("------------------------------------------------------------------------")
-
-#         for sdic in f:
-#             print("good")
-#             print(sdic)
-#         # if sdic[varl] in f:
-#         #     print('asd')
-#         #     print(sdic[varl])
-
-#         # exts = tuple(".dmg")
-
-#         # dmga = [f for f in dic if f.endswith(exts)]
-
-#         # dmgal = len(dmga)
-#         # var1 = 0
-#         # while dmgal != var1:
-#         #     print("hello")
-#         #     var1 = var1 + 1
-        
-#     # print(dmga)
-
-
-
 def CleanEND(extensions, place):
+    global dic
+    dic = []
+    for line in os.listdir(): 
+        dic.append(line)
     exts = tuple(extensions)
 
     dmga = [f for f in dic if f.endswith(exts)]
@@ -128,9 +65,14 @@ def CleanEND(extensions, place):
         var = var + 1
         
     print(dmga)
+    os.chdir(computerName +"/Downloads")
+
 
 def Clean(extensions, place):
-    
+    global dic
+    dic = []
+    for line in os.listdir(): 
+        dic.append(line)
 
 
     dicl = len(dic)
@@ -140,6 +82,10 @@ def Clean(extensions, place):
             print(dic[var])
             shutil.move(computerName +'/downloads/' + dic[(var)], place + dic[var])
         var = var + 1
+
+    os.chdir(computerName +"/Downloads")
+
+
 # Initialize the main window
 window = tkinter.Tk()
 # Size windows to 400 x 400px
@@ -171,7 +117,7 @@ def center(win):
     # Set geometry
     win.geometry('{}x{}+{}+{}'.format(width, height, x, y))
  
- 
+
 # Center Window on Screen
 center(window)
  
@@ -192,23 +138,18 @@ def press():
     Clean("Macbeth", computerName +"/Desktop/School Work/English/")
     Clean("Geography", computerName +"/Desktop/School Work/Geography/")
     Clean("History", computerName +"/Desktop/School Work/History/")
-
     Clean("REDEMPTION", computerName +"/Desktop/School Work/English/")
-
-
-
     Clean("DT", computerName +"/Desktop/School Work/DT/")
     Clean("python", computerName +"/Desktop/School Work/Information Software Technology/")
     Clean("pip", computerName +"/Desktop/School Work/Information Software Technology/")
     
+    CleanEND(['.py'], computerName +"/Desktop/School Work/Information Software Technology/")
     CleanEND(['.mp3'], computerName +"/Desktop/MY STUFF/Audio/")
     CleanEND(['.dmg'], computerName +"/Desktop/MY STUFF/DMG/")
     CleanEND(['.zip'], computerName +"/Desktop/MY STUFF/ZIP/")
     CleanEND(['.ai'], computerName +"/Desktop/School Work Work/DT/")
     CleanEND(['.png', '.jpg', '.jpeg', '.JPG'], computerName +"/Desktop/School Work/Images/")
     CleanEND(['.gcode', '.stl'], computerName +"/Desktop/3D Printer/")
-    CleanEND(['.py'], computerName +"/Desktop/School Work/IST/")
-
     CleanEND(['.app'], "/Applications/")
 
 
