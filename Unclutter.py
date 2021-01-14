@@ -19,7 +19,6 @@ appDic = []
 for line1 in os.listdir(): 
     appDic.append(line1)
 
-# print(appDic)
 print(dic)
 
 def createFolder(directory, name):
@@ -51,7 +50,7 @@ def fileSystem():
 def CleanEND(extensions, place):
     global dic
     dic = []
-    for line in os.listdir(): 
+    for line in os.listdir():
         dic.append(line)
     exts = tuple(extensions)
 
@@ -60,18 +59,20 @@ def CleanEND(extensions, place):
     dmgal = len(dmga)
     var = 0
     while dmgal != var:
-        
+        listbox.insert(END, dmga[(var)])
         shutil.move(computerName +'/downloads/' + dmga[(var)], place + dmga[var])
         var = var + 1
         
     print(dmga)
+    
     os.chdir(computerName +"/Downloads")
 
 
 def Clean(extensions, place):
     global dic
     dic = []
-    for line in os.listdir(): 
+    for line in os.listdir():
+ 
         dic.append(line)
 
 
@@ -80,53 +81,51 @@ def Clean(extensions, place):
     while dicl != var:
         if extensions in dic[var]:
             print(dic[var])
+            listbox.insert(END, dic[(var)])
             shutil.move(computerName +'/downloads/' + dic[(var)], place + dic[var])
         var = var + 1
 
     os.chdir(computerName +"/Downloads")
 
 
-# Initialize the main window
 window = tkinter.Tk()
-# Size windows to 400 x 400px
-window.minsize(400, 400)
-# Give your window a title
+window.minsize(450, 210)
 window.title("Unclutter")
-# Set Icon
-# window.wm_iconbitmap("AppIcon.icns")
 
+listbox = Listbox(window) 
+
+listbox.pack(side = LEFT, fill = BOTH) 
+
+scrollbar = Scrollbar(window) 
  
-# Place 'Hello World' label on the window
+scrollbar.pack(side = RIGHT, fill = BOTH) 
+
+listbox.config(yscrollcommand = scrollbar.set) 
+ 
+scrollbar.config(command = listbox.yview) 
+
+listbox.place(x=250, y=30)
+
 label = tkinter.Label(window, text="Press Button To Unclutter")
-label2 = tkinter.Label(window, text="Press Button To Set Up File System")
-# Place label at coordinates x=10 and y=10 (top right hand corner)
+label2 = tkinter.Label(window, text="Press Button To Create Folders")
+label3 = tkinter.Label(window, text="Files Moved")
+
 label.place(x=10, y=10)
 label2.place(x=10, y=70)
- 
- 
-# Function to find the screen dimensions, calculate the center and set geometry
+label3.place(x=300, y=5)
+
 def center(win):
-    # Call all pending idle tasks - carry out geometry management and redraw widgets.
     win.update_idletasks()
-    # Get width and height of the screen
     width = win.winfo_width()
     height = win.winfo_height()
-    # Calculate geometry
     x = (win.winfo_screenwidth() // 2) - (width // 2)
     y = (win.winfo_screenheight() // 2) - (height // 2)
-    # Set geometry
     win.geometry('{}x{}+{}+{}'.format(width, height, x, y))
- 
 
-# Center Window on Screen
 center(window)
- 
-# Initialize counter
 counter = 0
- 
-# Define button press function
+
 def press():
-    # use globally set counter variable
     print("pressed")
 
 
@@ -153,13 +152,9 @@ def press():
     CleanEND(['.app'], "/Applications/")
 
 
-
-# Place 'Change Label' button on the window
 button = tkinter.Button(window, text="Button", command=press)
 button2 = tkinter.Button(window, text="Button", command=fileSystem)
-# Place label at coordinates x=10 and y=10 (top right hand corner)
 button.place(x=10, y=40)
 button2.place(x=10, y=100)
-# w.place(x=10, y=150)
-# Show new window
+
 window.mainloop()
