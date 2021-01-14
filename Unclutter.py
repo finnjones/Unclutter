@@ -103,7 +103,6 @@ scrollbar.pack(side = RIGHT, fill = BOTH)
 listbox.config(yscrollcommand = scrollbar.set) 
  
 scrollbar.config(command = listbox.yview) 
-
 listbox.place(x=250, y=30)
 
 label = tkinter.Label(window, text="Press Button To Unclutter")
@@ -112,7 +111,7 @@ label3 = tkinter.Label(window, text="Files Moved")
 
 label.place(x=10, y=10)
 label2.place(x=10, y=70)
-label3.place(x=300, y=5)
+label3.place(x=295, y=5)
 
 def center(win):
     win.update_idletasks()
@@ -125,11 +124,10 @@ def center(win):
 center(window)
 counter = 0
 
+
+
 def press():
     print("pressed")
-
-
-
     Clean("Maths", computerName +"/Desktop/School Work/Maths/")
     Clean("Outcomes", computerName +"/Desktop/School Work/Science/")
     Clean("Year 10", computerName +"/Desktop/School Work/Notifications/")
