@@ -92,6 +92,8 @@ window = tkinter.Tk()
 window.minsize(450, 210)
 window.title("Unclutter")
 
+window.iconbitmap('favicon.ico')
+
 listbox = Listbox(window) 
 
 listbox.pack(side = LEFT, fill = BOTH) 
