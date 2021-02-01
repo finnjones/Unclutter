@@ -7,5 +7,5 @@
 ### There are some bugs so i would appricate any feedback.
 
 ### Python 3.7.7 must be installed to run the app.
-
+#### URL: https://www.python.org/downloads/release/python-377/
 ##### (Made for MacOS)
