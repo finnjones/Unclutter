@@ -14,6 +14,7 @@ dic = []
 for line in os.listdir(): 
     dic.append(line)
 
+
 os.chdir("/Applications")
 appDic = []
 for line1 in os.listdir(): 
@@ -58,6 +59,7 @@ def CleanEND(extensions, place):
     global dic
     dic = []
     for line in os.listdir():
+        line = line.lower()
         dic.append(line)
     exts = tuple(extensions)
 
@@ -79,7 +81,7 @@ def Clean(extensions, place):
     global dic
     dic = []
     for line in os.listdir():
- 
+        line = line.lower()
         dic.append(line)
 
 
@@ -98,8 +100,6 @@ def Clean(extensions, place):
 window = tkinter.Tk()
 window.minsize(450, 210)
 window.title("Unclutter")
-
-window.iconbitmap('favicon.ico')
 
 listbox = Listbox(window) 
 
@@ -137,23 +137,24 @@ counter = 0
 
 def press():
     print("pressed")
-    Clean("Maths", computerName +"/Desktop/School Work/Maths/")
-    Clean("Outcomes", computerName +"/Desktop/School Work/Science/")
-    Clean("Year 11", computerName +"/Desktop/School Work/Notifications/")
-    Clean("Y11", computerName +"/Desktop/School Work/Notifications/")
-    Clean("Software", computerName +"/Desktop/School Work/SDD/")
-    Clean("Religion", computerName +"/Desktop/School Work/Religion/")
-    Clean("Economics", computerName +"/Desktop/School Work/Year 11/Economics/")
-    Clean("Stage 6", computerName +"/Desktop/School Work/Notifications/")
-    Clean("S6", computerName +"/Desktop/School Work/Notifications/")
-    Clean("English", computerName +"/Desktop/School Work/English/")
-    Clean("Macbeth", computerName +"/Desktop/School Work/English/")
-    Clean("Geography", computerName +"/Desktop/School Work/Geography/")
-    Clean("History", computerName +"/Desktop/School Work/History/")
-    Clean("REDEMPTION", computerName +"/Desktop/School Work/English/")
-    Clean("Physics", computerName +"/Desktop/School Work/Science/Physics/")
-    Clean("Chemistry", computerName +"/Desktop/School Work/Science/Chemistry/")
-    Clean("DT", computerName +"/Desktop/School Work/DT/")
+    Clean("maths", computerName +"/Desktop/School Work/Maths/")
+    Clean("outcomes", computerName +"/Desktop/School Work/Science/")
+    Clean("year 11", computerName +"/Desktop/School Work/Notifications/")
+    Clean("y11", computerName +"/Desktop/School Work/Notifications/")
+    Clean("software", computerName +"/Desktop/School Work/SDD/")
+    Clean("sdd", computerName +"/Desktop/School Work/SDD/")
+    Clean("programming", computerName +"/Desktop/School Work/SDD/")
+    Clean("religion", computerName +"/Desktop/School Work/Religion/")
+    Clean("economics", computerName +"/Desktop/School Work/Year 11/Economics/")
+    Clean("stage 6", computerName +"/Desktop/School Work/Notifications/")
+    Clean("s6", computerName +"/Desktop/School Work/Notifications/")
+    Clean("english", computerName +"/Desktop/School Work/English/")
+    Clean("macbeth", computerName +"/Desktop/School Work/English/")
+    Clean("geography", computerName +"/Desktop/School Work/Geography/")
+    Clean("history", computerName +"/Desktop/School Work/History/")
+    Clean("physics", computerName +"/Desktop/School Work/Science/Physics/")
+    Clean("chemistry", computerName +"/Desktop/School Work/Science/Chemistry/")
+    Clean("dt", computerName +"/Desktop/School Work/DT/")
     Clean("python", computerName +"/Desktop/School Work/SDD/")
     Clean("pip", computerName +"/Desktop/School Work/SDD/")
     
@@ -164,7 +165,7 @@ def press():
     CleanEND(['.mp4', '.mov'], computerName +"/Desktop/MY STUFF/Videos/")
     CleanEND(['.zip'], computerName +"/Desktop/MY STUFF/ZIP/")
     CleanEND(['.ai'], computerName +"/Desktop/School Work Work/DT/")
-    CleanEND(['.png', '.jpg', '.jpeg', '.JPG'], computerName +"/Desktop/School Work/Images/")
+    CleanEND(['.png', '.jpg', '.jpeg'], computerName +"/Desktop/School Work/Images/")
     CleanEND(['.gcode', '.stl'], computerName +"/Desktop/3D Printer/")
     CleanEND(['.app'], "/Applications/")
 
